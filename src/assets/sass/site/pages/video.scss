@@ -1,0 +1,21 @@
+.video {
+    background-color: var(--background-light);
+    &__block {
+        display: grid;
+        // grid-template-columns: repeat(auto-fit, minmax(100px, 220px));
+        grid-template-columns: repeat(auto-fit, minmax(640px, 1fr));
+        gap: 30px;
+        @media (max-width: 840px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__content {
+        width: 100%;
+    }
+    &__frame {
+        width: 100%;
+        border-top-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+    }
+}

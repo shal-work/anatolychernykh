@@ -1,0 +1,31 @@
+@import './general/gi';
+@import './components/ui';
+@import './helpers/classes';
+@import 'main';
+
+@import 'site/bloks/header';
+@import 'site/bloks/footer';
+@import 'site/bloks/animate';
+@import 'site/bloks/main-video';
+
+
+@import 'site/pages/headline';
+@import 'site/pages/exhibition-first';
+@import 'site/pages/exhibition-second';
+@import 'site/pages/exhibition-third';
+@import 'site/pages/pictures';
+@import 'site/pages/meetings';
+@import 'site/pages/video';
+@import 'site/pages/pictures-carousel';
+@import 'site/pages/meetings-carousel';
+
+
+.fadeOut {
+    opacity: 0;
+}
+.fadeIn {
+    opacity: 1;
+}
+input[type=radio] {
+    display: none;
+}

@@ -1,0 +1,176 @@
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translate3d(-100%, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translate3d(100%, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.fadeInUp {
+    will-change: transform;
+	animation: 1s ease-in-out 1 fadeInUp;
+}
+
+.fadeInLeft {
+    will-change: transform;
+	animation: 1s ease-in-out 1 fadeInLeft;
+}
+.fadeInRight {
+    will-change: transform;
+	animation: 1s ease-in-out 1 fadeInRight;
+}
+
+.rotation {
+    will-change: transform;
+	animation: 1s ease-in-out 2 rotation;
+}
+
+
+@keyframes rotation {
+
+    from {
+        transform: rotateZ(353deg);
+    }
+    50% {
+        transform: rotateZ(22deg);
+    }
+    to {
+        transform: rotateZ(353deg);
+    }
+}
+
+.scale-y {
+    will-change: transform;
+	animation: 1s ease-in-out 1 scale-y;
+}
+@keyframes scale-y {
+    from {
+        transform: scale(0,1);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1,1);
+        opacity: 1;
+    }
+}
+.zoomIn {
+    will-change: transform;
+	animation: 1s ease-in-out 1 zoomIn;
+}
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    will-change: transform;
+	animation: .5s ease-in-out 1 fadeIn;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+.angle20L {
+    will-change: transform;
+	animation: .5s ease-in-out 1 angle20L;
+}
+@keyframes angle20L {
+    from {
+        opacity: 0;
+        transform: rotateZ(0)
+    }
+
+    to {
+        opacity: 1;
+        transform: rotateZ(-20deg)
+    }
+}
+.angle20R {
+    will-change: transform;
+	animation: .5s ease-in-out 1 angle20R;
+}
+@keyframes angle20R {
+    from {
+        opacity: 0;
+        transform: rotateZ(0)
+    }
+
+    to {
+        opacity: 1;
+        transform: rotateZ(20deg)
+    }
+}
+
+.fadeInUp50 {
+    will-change: transform;
+	animation: 1s ease-in-out 1 fadeInUp50;
+}
+@keyframes fadeInUp50 {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 50%, 0)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+.fadeOpacity {
+    will-change: transform;
+	animation: 3s 1s ease-in-out 1 fadeOpacity;
+
+}
+@keyframes fadeOpacity {
+    from {
+        opacity: 0.5;
+
+    }
+    to {
+        opacity: 1;
+
+    }
+}

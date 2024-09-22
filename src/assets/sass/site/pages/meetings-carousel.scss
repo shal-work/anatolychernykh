@@ -1,0 +1,107 @@
+.meetings-carousel {
+    padding-top: 60px;
+    position: fixed;
+    height: 100vh;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    // opacity: 0.7;
+    z-index: 100;
+    &_show {
+        display: block;
+    }
+    &__inner {
+        padding: 0 !important;
+        // height: 500px;
+    }
+    &__slides {
+        display: flex;
+        width: calc(14% * 30);
+    }
+    &__item {
+        height: 100%;
+        text-align: center;
+        &:hover {
+            scale: 1 !important;
+        }
+    }
+    &__block {
+        width: auto;
+        height: 80vh;
+    }
+    &__img {
+        width: auto;
+        height: 100%;
+        opacity: 1;
+        &:hover {
+            opacity: 1;
+            filter: contrast(100%);
+        }
+    }
+    &__prev, &__next {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 15%;
+        color: #fff;
+        opacity: .5;
+        text-align: center;
+        font-size: 40px;
+        transition: opacity .15s ease;
+        text-decoration: none;
+
+        &:hover {
+            opacity: .9;
+            background-color: rgba(0,0,0, .2);
+        }
+    }
+    &__prev {
+        left: 0;
+    }
+    &__next {
+        right: 0;
+    }
+    &__text {
+        color: var(--background-dark);
+        text-align: center;
+    }
+    &__w100 {
+        width: 100%;
+    }
+    &__w80 {
+        width: 80%;
+    }
+    &__h-auto {
+        height: auto;
+    }
+}
+
+.meetings-btn-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2;
+    padding: 1.25rem 1rem;
+    box-sizing: content-box;
+    width: 2em;
+    height: 2em;
+    padding: 0.25em 0.25em;
+    color: #000;
+    background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/2em auto no-repeat;
+    border: 0;
+    border-radius: 0.25rem;
+    opacity: 0.5;
+    cursor: pointer;
+    &:hover {
+        color: #000;
+        opacity: 0.75;
+    }
+}
