@@ -82,7 +82,7 @@ gulp.task('copy-img:docs', function ()  {
   return gulp
     .src(['./src/assets/img/**/*', '!./src/assets/img/**/*.svg'], { encoding: false })// берем исходники-картинки в src
       .pipe(changed(docs + '/assets/img')) //если картинки изменились идем дальше, если нет пропускаем все
-      .pipe(webp()) //обарабатываем картинки делаем webp
+      // .pipe(webp()) //обарабатываем картинки делаем webp
       .pipe(gulp.dest(docs + '/assets/img'))//сохраняем картинки
       //второй этап
       .pipe(gulp.src(['./src/assets/img/**/*', '!./src/assets/img/**/*.svg'], { encoding: false }))//опять берем исходники-картинки в src
