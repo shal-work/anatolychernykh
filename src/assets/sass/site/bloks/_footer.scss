@@ -67,6 +67,9 @@
     cursor: pointer;
     border: 1px solid var(--background-light);
     transition: 1s all;
+    @media (max-width: 920px) {
+        display: none;
+    }
 }
 
 .pageup svg {

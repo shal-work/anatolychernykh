@@ -152,6 +152,16 @@ gulp.task('copy-favicon:docs', (done) => {
   done(console.log('Нет favicon.ico'));
 });
 
+gulp.task('copy-video:docs', (done) => {
+  if (fs.existsSync('./src/assets/video/')) {
+    return gulp
+    .src('./src/assets/video/*', {encoding: false})
+      .pipe(gulp.dest(docs + '/assets/video'));
+  }
+  done(console.log('Нет видео'));
+});
+
+
 const serverOptions = {
   livereload: true,
   open: true
@@ -163,4 +173,4 @@ gulp.task('server:docs', () => {
 });
 
 
-gulp.task( 'build:docs', gulp.parallel('copy-fonts:docs', 'html:docs', 'sass:docs', 'copy-img:docs','copy-svg:docs','js:docs', 'copy-favicon:docs'));
+gulp.task( 'build:docs', gulp.parallel('copy-fonts:docs', 'html:docs', 'sass:docs', 'copy-img:docs','copy-svg:docs','js:docs', 'copy-favicon:docs', 'copy-video:docs'));

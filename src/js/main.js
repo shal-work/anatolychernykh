@@ -1,4 +1,3 @@
-// 'use strict';
 import $ from './lib/lib';
 import './lib/site/main.js';
 

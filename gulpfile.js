@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 require('./_gulp/dev.js');
-// require('./_gulp/docs.js');
-require('./_gulp/docsHtml.js');
+require('./_gulp/docs.js');
+
 
 
 gulp.task('default', gulp.series(

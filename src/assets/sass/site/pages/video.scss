@@ -2,7 +2,8 @@
     background-color: var(--background-light);
     &__block {
         display: grid;
-        // grid-template-columns: repeat(auto-fit, minmax(100px, 220px));
+        z-index: 999;
+        position: relative;
         grid-template-columns: repeat(auto-fit, minmax(640px, 1fr));
         gap: 30px;
         @media (max-width: 840px) {

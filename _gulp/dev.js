@@ -85,7 +85,6 @@ gulp.task('copy-fonts:dev', (done) => {
 //     .pipe(webpack(require('../webpack.config')))
 //     .pipe(gulp.dest(build + '/js'));
 // });
-
 gulp.task('js:dev', () => { //делаю как раньше один script
   return gulp
     .src('./src/js/*.js')
@@ -110,7 +109,6 @@ gulp.task('js:dev', () => { //делаю как раньше один script
     .pipe(gulp.dest(build));
 });
 
-
 gulp.task('copy-favicon:dev', (done) => {
   if (fs.existsSync('./favicon.ico')) {
     return gulp
@@ -119,6 +117,17 @@ gulp.task('copy-favicon:dev', (done) => {
   }
   done(console.log('Нет favicon.ico'));
 });
+
+gulp.task('copy-video:dev', (done) => {
+  if (fs.existsSync('./src/assets/video/')) {
+    return gulp
+    .src('./src/assets/video/*', {encoding: false})
+      .pipe(gulp.dest(build + '/assets/video'));
+  }
+  done(console.log('Нет видео'));
+});
+
+// src\assets\video\screensaver.MP4
 
 const serverOptions = {
   livereload: true,
@@ -137,6 +146,7 @@ gulp.task('watch:dev', () => {
     gulp.watch(['./src/assets/img/**/*', '!./src/assets/img/**/*.svg'], gulp.parallel('copy-img:dev'));
     gulp.watch('./src/assets/fonts/**/*', gulp.parallel('copy-fonts:dev'));
     gulp.watch('./src/js/**/*.js', gulp.parallel('js:dev'));
+
 });
 
-gulp.task('build:dev', gulp.parallel('copy-fonts:dev', 'html:dev', 'sass:dev', 'copy-img:dev','copy-svg:dev', 'js:dev', 'copy-favicon:dev'));
+gulp.task('build:dev', gulp.parallel('copy-fonts:dev', 'html:dev', 'sass:dev', 'copy-img:dev','copy-svg:dev', 'js:dev', 'copy-favicon:dev', 'copy-video:dev'));

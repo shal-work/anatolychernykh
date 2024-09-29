@@ -2,14 +2,17 @@ import $ from '../core';
 
 $.prototype.carousel = function(num, inner, item, slid ) {
 
-
     for (let i = 0 ; i < this.length; i++) {
         // const width = window.getComputedStyle(this[i].querySelector('.pictures-carousel__inner')).width;
         const width = window.getComputedStyle(this[i].querySelector(inner)).width;
+
         // const slides = this[i].querySelectorAll('.pictures-carousel__item');
         const slides = this[i].querySelectorAll(item);
+
         // const slidesField = this[i].querySelector('.pictures-carousel__slides');
         const slidesField = this[i].querySelector(slid);
+
+
 
         slidesField.style.width = 100 * slides.length + '%';
         slides.forEach(slide => {
@@ -56,8 +59,8 @@ $.prototype.carousel = function(num, inner, item, slid ) {
                 slideIndex--;
             }
         });
-
     }
+
 };
 
 // $('.carousel').carousel();
