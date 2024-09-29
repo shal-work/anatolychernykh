@@ -8,8 +8,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const vidElement = document.querySelector(".main-video__frame");
     const vidSources = [
-      "../../assets/video/screensaver1.mp4",
-      "../../assets/video/screensaver2.mp4"
+      "./assets/video/screensaver1.mp4",
+      "./assets/video/screensaver2.mp4"
       ];
     let activeVideo = Math.floor((Math.random() * vidSources.length));
     vidElement.src = vidSources[activeVideo];
