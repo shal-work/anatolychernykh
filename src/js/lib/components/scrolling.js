@@ -5,7 +5,7 @@ const scrolling = (upSelector) => {
         if (document.documentElement.scrollTop > 600) {
 
             if ( document.querySelector('.pageup').hasAttribute('data-show')) {
-                upElem.classList.add('animated', 'fadeIn');
+                upElem.classList.add('fadeIn');
                 upElem.classList.remove('fadeOut');
             }
 

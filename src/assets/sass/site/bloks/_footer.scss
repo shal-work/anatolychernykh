@@ -68,10 +68,15 @@
     border: 1px solid var(--background-light);
     transition: 1s all;
     @media (max-width: 920px) {
-        display: none;
+        width: 26px;
+        height: 26px;
+        bottom: 5%;
     }
 }
 
 .pageup svg {
     fill: var(--text-golg);
+    @media (max-width: 920px) {
+        opacity: 0.5;
+    }
 }

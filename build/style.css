@@ -1402,12 +1402,19 @@ body {
 }
 @media (max-width: 920px) {
   .pageup {
-    display: none;
+    width: 26px;
+    height: 26px;
+    bottom: 5%;
   }
 }
 
 .pageup svg {
   fill: var(--text-golg);
+}
+@media (max-width: 920px) {
+  .pageup svg {
+    opacity: 0.5;
+  }
 }
 
 @keyframes fadeInUp {
@@ -1440,6 +1447,15 @@ body {
     transform: none;
   }
 }
+@keyframes fadeOutLeft {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+}
 .fadeInUp {
   will-change: transform;
   animation: 1s ease-in-out 1 fadeInUp;
@@ -1453,6 +1469,16 @@ body {
 .fadeInRight {
   will-change: transform;
   animation: 1s ease-in-out 1 fadeInRight;
+}
+
+.fadeInLeftMenu {
+  will-change: transform;
+  animation: 0.3s ease-in-out 1 fadeInLeft;
+}
+
+.fadeOutLeft {
+  will-change: transform;
+  animation: 0.3s ease-in-out 1 fadeOutLeft;
 }
 
 .rotation {
@@ -2006,6 +2032,7 @@ body {
 @media (max-width: 920px) {
   .pictures-carousel__prev, .pictures-carousel__next, .meetings-carousel__prev, .meetings-carousel__next {
     opacity: 0;
+    width: 20%;
   }
 }
 .pictures-carousel__prev, .meetings-carousel__prev {
@@ -2047,8 +2074,11 @@ body {
 @media (max-width: 920px) {
   .btn-close {
     opacity: 0.8;
-    width: 10px;
-    height: 10px;
+    width: 1em;
+    height: 1em;
+    padding: 1.25rem 1rem;
+    top: 0;
+    right: 0;
     background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
   }
 }
