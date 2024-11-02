@@ -189,7 +189,7 @@ class Slider {
             passive: true
         });
 
-        this.page.addEventListener('touchend', () => {
+        this.page.addEventListener('touchend' || false , () => {
             this.slides[this.slideIndex].style.transform = `translateX(0)`;
             if (direction < 0) {
                 this.plusSlides();
@@ -208,11 +208,23 @@ class Slider {
             e.preventDefault();
             this.plusSlides();
         });
+        this.btnsNext.addEventListener('touchend', () => {
+            this.plusSlides();
+        }, {
+            passive: true
+        });
 
         this.btnsPrev.addEventListener('click', (e) => {
             e.preventDefault();
             this.minusSlides();
         });
+        this.btnsPrev.addEventListener('touchend', () => {
+             this.minusSlides();
+        }, {
+            passive: true
+        });
+
+
         this.btnsClose.addEventListener('click', (e) => {
             e.preventDefault();
             for (let n = 0 ; n < this.slides.length; n++) {
