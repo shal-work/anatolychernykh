@@ -179,12 +179,7 @@ class Slider {
 
         this.page.addEventListener('touchmove', (e) => {
             direction = (e.touches[0].clientX >= shiftX) ? 1 : -1; //влево -1, вправо +1
-            if (direction < 0) {
-                this.slides[this.slideIndex].style.transform = `translateX(${e.touches[0].clientX - shiftX}px)`;
-
-            } else {
-                this.slides[this.slideIndex].style.transform = `translateX(${e.touches[0].clientX - shiftX}px)`;
-            }
+            this.slides[this.slideIndex].style.transform = `translateX(${e.touches[0].clientX - shiftX}px)`;
         }, {
             passive: true
         });
