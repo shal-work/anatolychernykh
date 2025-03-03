@@ -24,6 +24,9 @@
     position: static;
     display: flex;
     gap: 0px;
+    @media (max-width: 1280px) {
+        display: none;
+    }
     &__item {
         position: static;
         width: 20%;

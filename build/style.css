@@ -1078,6 +1078,7 @@ body {
 @media (max-width: 1280px) {
   .row {
     flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
   }
 }
@@ -1092,7 +1093,12 @@ body {
 .row__title {
   text-align: center;
   color: var(--text-golg);
-  margin-bottom: 20px;
+  margin-bottom: 10vw;
+}
+@media (max-width: 1280px) {
+  .row__title {
+    margin-bottom: 20px;
+  }
 }
 .row__img {
   width: 100%;
@@ -1660,6 +1666,11 @@ body {
   display: flex;
   gap: 0px;
 }
+@media (max-width: 1280px) {
+  .decoration-pictures {
+    display: none;
+  }
+}
 .decoration-pictures__item {
   position: static;
   width: 20%;
@@ -1710,6 +1721,7 @@ body {
 @media (max-width: 1280px) {
   .exhibition-second__row {
     flex-direction: column-reverse;
+    flex-direction: column;
   }
 }
 .exhibition-second__left {

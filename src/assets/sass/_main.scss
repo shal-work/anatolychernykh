@@ -91,6 +91,7 @@
     }
     @media (max-width: 1280px) {
         flex-direction: column-reverse;
+        flex-direction: column;
         align-items: center;
     }
     &__block {
@@ -102,7 +103,11 @@
     &__title {
         text-align: center;
         color: var(--text-golg);
-        margin-bottom: 20px;
+
+        margin-bottom: 10vw;
+        @media (max-width: 1280px) {
+            margin-bottom: 20px;
+        }
     }
     &__img {
         width: 100%;
