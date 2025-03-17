@@ -1939,8 +1939,9 @@ body {
 }
 .video__content {
   width: 100%;
+  text-align: center;
 }
-.video__frame {
+.video__iframe {
   width: 100%;
   border-top-left-radius: 16px;
   border-bottom-right-radius: 16px;

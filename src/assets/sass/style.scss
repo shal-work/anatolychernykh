@@ -1,22 +1,22 @@
-@import './general/gi';
-@import './components/ui';
-@import './helpers/classes';
-@import 'main';
+@use './general/gi';
+@use './components/ui';
+@use './helpers/classes';
+@use 'main';
 
-@import 'site/bloks/header';
-@import 'site/bloks/footer';
-@import 'site/bloks/animate';
-@import 'site/bloks/main-video';
+@use 'site/bloks/header';
+@use 'site/bloks/footer';
+@use 'site/bloks/animate';
+@use 'site/bloks/main-video';
 
 
-@import 'site/pages/headline';
-@import 'site/pages/exhibition-first';
-@import 'site/pages/exhibition-second';
-@import 'site/pages/exhibition-third';
-@import 'site/pages/pictures';
-@import 'site/pages/meetings';
-@import 'site/pages/video';
-@import 'site/pages/carousel-tsart';
+@use 'site/pages/headline';
+@use 'site/pages/exhibition-first';
+@use 'site/pages/exhibition-second';
+@use 'site/pages/exhibition-third';
+@use 'site/pages/pictures';
+@use 'site/pages/meetings';
+@use 'site/pages/video';
+@use 'site/pages/carousel-tsart';
 
 
 .fadeOut {

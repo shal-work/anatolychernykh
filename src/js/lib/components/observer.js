@@ -29,6 +29,11 @@ try {
 	observer.observe(document.querySelector('.observer-second-pictures'));
 	observer.observe(document.querySelector('.observer-third'));
 	observer.observe(document.querySelector('.observer-third-pictures'));
+
+	observer.observe(document.querySelector('.observer-pavlova'));
+	observer.observe(document.querySelector('.observer-pavlova-additive'));
+
+
 	observer.observe(document.querySelector('.observer-paintings'));
 	observer.observe(document.querySelector('.observer-meetings'));
 } catch (error) {}
