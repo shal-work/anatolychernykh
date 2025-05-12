@@ -1,0 +1,30 @@
+// @use 'site/components/button-site';
+@import './_main.scss';
+@import './general/gi';
+@import './components/ui';
+
+
+
+// vue_components
+@import '@/vue_components/Header/AppHeader.scss';
+@import '@/vue_components/MainVideo/AppMainVideo.scss';
+@import '@/vue_components/Footer/AppFooter.scss';
+@import '@/vue_components/ExhibitionFirst/AppExhibitionFirst';
+@import '@/vue_components/ExhibitionSecond/AppExhibitionSecond';
+@import '@/vue_components/ExhibitionThird/AppExhibitionThird';
+@import '@/vue_components/Pictures/AppPictures';
+@import '@/vue_components/Meetings/AppMeetings';
+@import '@/vue_components/Video/AppVideo';
+
+// Page PagePicturesCarousel & PageMeetingsCarousel
+@import '@/page/PagePicturesCarousel/AppPagePicturesCarousel';
+
+.fadeOut {
+    opacity: 0;
+}
+.fadeIn {
+    opacity: 1;
+}
+input[type=radio] {
+    display: none;
+}

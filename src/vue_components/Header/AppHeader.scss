@@ -1,0 +1,212 @@
+.header {
+    display: flex;
+    align-items: center;
+    background-color: var(--background);
+    padding: calc(var(--vw) * 20 + 20px) calc(var(--vw) * 90 + 30px);
+    justify-content: space-between;
+    gap: 20px;
+    @media (min-width: 1920px) {
+        padding: 40px 120px;
+    }
+    &__nav {
+        display: flex;
+        z-index: 10;
+        z-index: 100;
+        @media (max-width: 960px) {
+            display: none;
+            background-color: var(--background);
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 70%;
+            border-top-right-radius: 16px;
+            border-bottom-right-radius: 16px;
+        }
+        @media (max-width: 250px)  {
+            width: 100%;
+        }
+    }
+}
+.logo {
+    position: relative;
+    z-index: 10;
+    &__link {
+        display: block;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        overflow: hidden;
+        position: relative;
+        border: 3px solid var(--background-dark);
+        box-shadow: 0 10px 50px 10px #d4cbba99;
+    }
+    &__img {
+        width: 150%;
+        height: 150%;
+        right: 20px;
+        position: relative;
+        will-change: transform;
+        animation: 8s ease-in-out infinite shake;
+    }
+    // &::before {
+    //     display: block;
+    //     position: absolute;
+    //     width: 15px;
+    //     height: 15px;
+    //     border-radius: 50%;
+    //     background-color: rgb(7, 248, 7);
+    //     content: ' ';
+    //     right: 5px;
+    //     bottom: 10px;
+    //     z-index: 10;
+    //     border: 2px solid var(--background-dark);
+    //     will-change: transform;
+    //     animation: 1.2s ease-in-out infinite blinking;
+    // }
+
+}
+
+@keyframes blinking {
+    from {
+        opacity: .5;
+        // transform: translate3d(100%, 0, 0);
+        border: 2px solid var(--background-dark);
+    }
+    50% {
+        opacity: 1;
+        border: 3px solid var(--text-red);
+    }
+    to {
+        opacity: .5;
+        border: 2px solid var(--background-dark);
+    }
+}
+
+@keyframes shake {
+
+    from,
+    to {
+        transform: translate3d(0, 0, 0)
+    }
+    50% {
+        transform: translate3d(20px, -20px, 0)
+    }
+    100% {
+        transform: translate3d(0px, 0, 0)
+    }
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: calc(var(--vw)*74);
+    z-index: 10;
+    @media (min-width: 1920px) {
+        gap: 74px;
+    }
+    @media (max-width: 960px) {
+        flex-direction: column;
+        align-items: flex-start;
+        // gap: calc(100vh/640 * 50);
+        margin-top: 10%;
+    }
+    &__link {
+        font-size: calc(var(--vw) * 6 + 14px);
+        font-weight: 600;
+        line-height: calc(var(--vw) * 10 + 12px);
+
+        color: var(--text2-background);
+        &:hover{
+            color: var(--text-background);
+        }
+        @media (max-width: 1920px) {
+            font-size: 22px;
+            line-height: 22px;
+        }
+        @media (max-width: 960px) {
+            color: var(--white);
+        }
+    }
+
+    &__item {
+        overflow: hidden;
+        height: auto;
+        padding: 10px 0;
+    }
+}
+
+.underline-anime {
+    padding-bottom: 2px;
+    position: relative;
+}
+
+.underline-anime::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--text2-background);
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0); //прячем черту левее блока, он скрыт из-за overflow: hidden;
+    transition: opacity 300ms, transform 900ms;
+    will-change: transform;
+}
+
+.underline-anime:hover::after {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+.navbar-toggle {
+    display: none;
+    @media (max-width: 960px) {
+        display: block;
+        z-index: 200;
+        padding: 10px;
+    }
+}
+.icon-bar {
+    display: block; //создаем элементы бургера
+    background-color: var(--white);
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+}
+.navbar-toggle .icon-bar + .icon-bar {
+    margin-top: 4px;
+}
+.burger span:nth-child(1) {
+    transform: rotate(0deg) translate(0);
+    transition: 0.2s;
+}
+.burger span:nth-child(2) {
+    opacity: 1;
+    transform: rotate(0deg) translate(0);
+    transition: 0.2s;
+}
+.burger span:nth-child(3) {
+    transform: rotate(0deg) translate(0);
+    transition: 0.2s;
+}
+.burger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px,5.5px);
+    transition: 0.2s;
+    background-color: var(--white);
+}
+.burger.active span:nth-child(2) {
+    opacity: 0;
+    transition: 0.2s;
+}
+.burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(3.5px,-2.5px);
+    transition: 0.2s;
+    background-color: var(--white);
+}

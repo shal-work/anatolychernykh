@@ -122,15 +122,14 @@ export default class Slider {
         });
 
 
-        this.btnsClose.addEventListener('click', (e) => {
-            e.preventDefault();
-            for (let n = 0 ; n < this.slides.length; n++) {
-                this.slides[n].style.left = '';
-            }
-            this.page.style.transform = '';
-            this.carousel.classList.remove('carousel-show');
-            $('.pageup').setAttribute('data-show', true);
-        });
+        // this.btnsClose.addEventListener('click', (e) => {
+        //     e.preventDefault();
+        //     for (let n = 0 ; n < this.slides.length; n++) {
+        //         this.slides[n].style.left = '';
+        //     }
+        //     this.page.style.transform = '';
+        //     // $('.pageup').setAttribute('data-show', true);
+        // });
         this.swipe();
     }
 }

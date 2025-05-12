@@ -7,10 +7,12 @@ $.prototype.setAttribute = function (attributeName, value) {
             this[i].setAttribute(attributeName, value);
         }
     }
+
     return this;
 };
 
 $.prototype.removeAttribute = function (attributeName) {
+    
     for (let i = 0; i < this.length; i++) {
         if (this[i].hasAttribute(attributeName)) { //можно не проверять, работает
             this[i].removeAttribute(attributeName);

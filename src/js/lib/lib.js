@@ -1,13 +1,10 @@
 import $ from './core';
-import './modules/display'; //show, hide, toggle
+
 import './modules/classes';//addClass, removeClass, toggleClass
 import './modules/hendlers';// on, off, click
-import './modules/attributes';//setAttribute, removeAttribute, toggleAttribute
+import './modules/effects';//fadeOut, fadeOut, fadeToggle
 import './modules/actions';//html, eq, index, find, siblings
-import './modules/effects';//
-
-import './components/observer';
-
-
+import './modules/attributes';//setAttribute, removeAttribute, toggleAttribute
+import './site/main'
 
 export default $;

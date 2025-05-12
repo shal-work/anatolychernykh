@@ -90,14 +90,13 @@ $.prototype.find = function(selector) {
     return this;
 };
 
-// X.losest(Y) возвращает элементы X с ближайшим общим родительским элементом (Y) (или сам элемент)
+// X.closest(Y) возвращает элементы X с ближайшим общим родительским элементом (Y) (или сам элемент)
 // console.log($('.some').closest('.findme')); - найти все .some с родителем .findme, если не найдено вернуть сам элемента
 $.prototype.closest = function(selector) {
     let counter = 0;
 
     for (let i = 0; i < this.length; i++) {
         let this1 = this[i].closest(selector);
-        debugger
         if(!this1) { //мое условие
             // this[i] = 'classNull';
             return this;
@@ -110,11 +109,10 @@ $.prototype.closest = function(selector) {
     for (; counter < objLength; counter++) {
         delete this[counter];
     }
-    debugger
     return this;
 };
 
-
+//находим всех соседей исключая текущий
 $.prototype.siblings = function() {
     let numberOfItems = 0;
     let counter = 0;

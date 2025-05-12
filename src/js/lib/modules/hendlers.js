@@ -1,6 +1,6 @@
 import $ from '../core';
 
-// Реазизация
+// Реализация
 // $('.food-2 a').on('click',() => {
 //     $('.modal-dialog').fadeIn(180);
 // });
