@@ -5,16 +5,11 @@ const scrolling = (upSelector) => {
         
         if (document.documentElement.scrollTop > 600) {
             if ( document.querySelector('.pageup').hasAttribute('data-show')) {
-                // upElem.classList.add('fadeIn');
-                // upElem.classList.remove('fadeOut');
                 $(upElem).addClass('fadeIn');
                 $(upElem).removeClass('fadeOut');
             }
 
         } else {
-            // debugger
-            // upElem.classList.add('fadeOut');
-            // upElem.classList.remove('fadeIn');
             $(upElem).addClass('fadeOut');
             $(upElem).removeClass('fadeIn');
         }

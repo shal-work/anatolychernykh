@@ -4,7 +4,10 @@
         <div class="pictures">
             <div class="pictures__item" v-for="item in listPictures" :key="item.id">
                 <RouterLink class="pictures__block" to="/pictures-carousel" @click="selectPicture(item.id)">
-                    <img class="pictures__img" :src="require('@/assets/img/' + item.picture + '.jpg')" :alt=item.alt :width=item.width  :height=item.height>
+                    <picture>
+                        <source type="image/webp" :srcset="require('@/assets/img/' + item.picture_grid.picture + '.webp')">
+                        <img class="pictures__img" :src="require('@/assets/img/' + item.picture_grid.picture + '.jpg')" :alt=item.alt :width=item.picture_grid.width :height=item.picture_grid.height>
+                    </picture>
                 </RouterLink>
                 <div class="paragraph pictures__text line-clamp">
                     {{item.text}}

@@ -2,7 +2,12 @@
     <header class="header" id="up">
         <div class="logo">
             <a href="#" class="logo__link">
-                <img src="@/assets/img/logo.jpg" class="logo__img" alt="Logo" width="111" height="111">
+                <picture>
+                    <source type="image/webp" srcset="@/assets/img/logo_167.webp"  media="(max-width: 412px)">
+                    <source type="image/jpg" srcset="@/assets/img/logo_167.jpg" media="(max-width: 412px)">
+                    <source type="image/webp" srcset="@/assets/img/logo_111.webp">
+                    <img class="logo__img" src="@/assets/img/logo_111.jpg" alt="Logo" width="111" height="111">
+                </picture>
             </a>
         </div>
 
@@ -12,7 +17,7 @@
                     <a href="#about"  class="menu__link underline-anime text-nobreak">О художнике</a>
                 </li>
                 <li class="menu__item">
-                    <a href="#exhibition-first"  class="menu__link underline-anime text-nobreak">Выставки</a>
+                    <a href="#exhibition"  class="menu__link underline-anime text-nobreak">Выставки</a>
                 </li>
                 <li class="menu__item">
                     <a href="#paintings"  class="menu__link underline-anime text-nobreak">Работы</a>

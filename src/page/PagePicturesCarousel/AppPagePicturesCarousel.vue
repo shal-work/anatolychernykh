@@ -7,12 +7,21 @@
                 <div class="pictures-carousel__inner">
                     <div class="pictures-carousel__slides">
                         <div class="pictures-carousel__item" v-for="item in listPictures" :key="item.id">
-                            <div class="pictures-carousel__block">
-                                <img class="pictures-carousel__img" :src="require('@/assets/img/' + item.picture + '.jpg')" :alt=item.alt :width=item.width  :height=item.height>
-                            </div>
+                            <!-- <div class="pictures-carousel__block"> -->
+                                <!-- <img class="pictures-carousel__img" :src="require('@/assets/img/' + item.picture + '.jpg')" :alt=item.alt :width=item.width  :height=item.height> -->
+                                <picture>
+                                    <source type="image/webp" :srcset="require('@/assets/img/' + item.slider_mobil.picture + '.webp')"  media="(max-width: 412px)">
+                                    <source type="image/jpg" :srcset="require('@/assets/img/' + item.slider_mobil.picture + '.jpg')" media="(max-width: 412px)">
+
+                                    <source type="image/webp" :srcset="require('@/assets/img/' + item.picture + '.webp')">
+                                    <img class="pictures-carousel__img" :src="require('@/assets/img/' + item.picture + '.jpg')" :alt=item.alt :width=item.width  :height=item.height>
+                                </picture>
+                                
+                            <!-- </div> -->
                             <!-- <div class="paragraph block-text line-clamp">
                                 {{item.text}}
                             </div> -->
+
                         </div>
                     </div>
                 </div>

@@ -33,13 +33,18 @@ const observerVue = () => {
 	} catch (error) {}
 
 	try {
-		observer.observe(document.querySelector('.observer-first'));
-		observer.observe(document.querySelector('.observer-first-additive'));
+		observer.observe(document.querySelector('.observer-peterhof'));
+		observer.observe(document.querySelector('.observer-peterhof-additive'));
+
+	} catch (error) {}
+	try {
+		observer.observe(document.querySelector('.observer-second'));
+		observer.observe(document.querySelector('.observer-second-additive'));
 
 	} catch (error) {}
 	try {
 		observer.observe(document.querySelector('.observer-third'));
-		observer.observe(document.querySelector('.observer-third-pictures'));
+		observer.observe(document.querySelector('.observer-third-additive'));
 	} catch (error) {}
 	try {
 		observer.observe(document.querySelector('.observer-paintings'));

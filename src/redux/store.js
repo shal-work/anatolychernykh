@@ -5,13 +5,17 @@ import {initialLoadingPictureCreator} from './picture';
 import meetingsReducer from './meetings'
 import {initialLoadingMeetingsCreator} from './meetings'
 
+import billboardsReducer from './billboards'
+import {initialLoadingBillboardsCreator} from './billboards'
+
 
 
 
 let store = {
     state: {
         picture: {},
-        meetings: {}
+        meetings: {},
+        billboards: {}
     },
     getState() {
         let picture = pictureReducer(initialLoadingPictureCreator());
@@ -19,6 +23,10 @@ let store = {
 
         let meetings = meetingsReducer(initialLoadingMeetingsCreator());
         this.state.meetings = {...meetings};
+
+
+        let billboards = billboardsReducer(initialLoadingBillboardsCreator());
+        this.state.billboards = {...billboards};
 
         return this.state;
     },

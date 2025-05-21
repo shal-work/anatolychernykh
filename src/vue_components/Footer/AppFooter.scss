@@ -62,12 +62,12 @@
     position: fixed;
     bottom: 50px;
     right: 3%;
-    z-index: 30;
+    z-index: 1130;
     background-color: var(--background-light);
     cursor: pointer;
     border: 1px solid var(--background-light);
     transition: 1s all;
-    z-index: 10;
+    // z-index: 10;
     @media (max-width: 920px) {
         width: 26px;
         height: 26px;

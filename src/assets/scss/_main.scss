@@ -20,6 +20,10 @@
     position: relative;
 }
 
+.none-scroll {
+    overflow: hidden;
+}
+
 .main {
     display: flow-root;
     min-height: 100vh;

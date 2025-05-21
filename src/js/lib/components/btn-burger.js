@@ -2,7 +2,6 @@
 import '../lib.js';
 
 const btnBurger = () => {
-	// Создать наблюдателя
 
     // работа с бургером
     // Добавляем класс active, для замены бургера на крестик (это в css)
@@ -10,6 +9,7 @@ const btnBurger = () => {
         $('.burger').toggleClass('active');
     });
     let isClick = true;
+    
     $.prototype.dropdownFadeLeft = function() {
         for (let i = 0; i < this.length; i++) {
             const id = this[i].getAttribute('id');
@@ -32,12 +32,14 @@ const btnBurger = () => {
         }
     };
     $('.navbar-toggle').dropdownFadeLeft();
+
     $('.collapse').on('click', function() {
         if (window.getComputedStyle(document.querySelector('.navbar-toggle')).display != 'none') {
             let item= document.querySelectorAll('.collapse');
             item.forEach((item) => item.style.display = 'none');
             $('.burger').toggleClass('active');
             isClick ?  isClick = false : isClick = true;
+            $('body').removeClass('none-scroll');
         }
     });
 };
