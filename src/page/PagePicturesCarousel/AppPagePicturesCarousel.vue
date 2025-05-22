@@ -11,7 +11,7 @@
                                 <source type="image/webp" :srcset="require('@/assets/img/' + currentPicture.mobilPicture + '.webp')"  media="(max-width: 412px)">
                                 <source type="image/jpg" :srcset="require('@/assets/img/' + currentPicture.mobilPicture + '.jpg')" media="(max-width: 412px)">
                                 <source type="image/webp" :srcset="require('@/assets/img/' + currentPicture.picture + '.webp')">
-                                <img class="pictures-carousel__img" :class="{zoomIn: isActive}" :src="require('@/assets/img/' + currentPicture.picture + '.jpg')" :alt=item.alt :width=item.width  :height=item.height>
+                                <img class="pictures-carousel__img" :class="{zoomIn: isActive}" :src="require('@/assets/img/' + currentPicture.picture + '.jpg')" :alt=currentPicture.alt :width=currentPicture.width  :height=currentPicture.height>
                             </picture>
                         </div>
                     </div>
@@ -20,12 +20,9 @@
                 <div class="pictures-carousel__header">
                     <div class="pictures-carousel__count">{{currentPicture.count }} / {{currentPicture.countPicture }}</div>
                 </div>
-
-                <!-- <button  class="pictures-carousel__prev" data-slide="prev" > -->
                 <button  class="pictures-carousel__prev"  @click="prev()" :class="{fadeOut: isFadeOutL}">
                     <span class="carousel-prev-icon">&lt;</span>
                 </button>
-                <!-- <button  class="pictures-carousel__next" data-slide="next"> -->
                 <button  class="pictures-carousel__next" @click="next()" :class="{fadeOut: isFadeOutR}">
                     <span class="carousel-next-icon">&gt;</span>
                 </button>
@@ -62,17 +59,23 @@
     }, 3000)
 
     const currentPicture = ref ({
-            picture: props.pState.picture.items[offset].picture,
-            mobilPicture: props.pState.picture.items[offset].slider_mobil.picture,
-            count: props.pState.picture.items[offset].id,
-            countPicture: countPicture,
+        picture: props.pState.picture.items[offset].picture,
+        mobilPicture: props.pState.picture.items[offset].slider_mobil.picture,
+        count: props.pState.picture.items[offset].id,
+        alt: props.pState.picture.items[offset].alt,
+        height: props.pState.picture.items[offset].height,
+        width: props.pState.picture.items[offset].width,
+        countPicture: countPicture,
     })
 
     const selectPicture = () => {
-        currentPicture.value = {
+            currentPicture.value = {
             picture: props.pState.picture.items[offset].picture,
             mobilPicture: props.pState.picture.items[offset].slider_mobil.picture,
             count: props.pState.picture.items[offset].id,
+            alt: props.pState.picture.items[offset].alt,
+            height: props.pState.picture.items[offset].height,
+            width: props.pState.picture.items[offset].width,
             countPicture: countPicture,
         }
     }

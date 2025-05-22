@@ -8,26 +8,21 @@
 
                 <div class="pictures-carousel__inner">
                     <div class="pictures-carousel__slides">
-                        <div class="pictures-carousel__item" v-for="item in listMeetings" :key="item.id">
+                        <div class="pictures-carousel__item">
                             <div class="pictures-carousel__block">
-
                                 <picture>
                                     <source type="image/webp" :srcset="require('@/assets/img/' + currentPicture.mobilPicture + '.webp')"  media="(max-width: 412px)">
                                     <source type="image/jpg" :srcset="require('@/assets/img/' + currentPicture.mobilPicture + '.jpg')" media="(max-width: 412px)">
                                     <source type="image/webp" :srcset="require('@/assets/img/' + currentPicture.picture + '.webp')">
-                                    <img class="pictures-carousel__img" :class="{zoomIn: isActive}" :src="require('@/assets/img/' + currentPicture.picture + '.jpg')" :alt=item.alt :width=item.width  :height=item.height>
+                                    <img class="pictures-carousel__img" :class="{zoomIn: isActive}" :src="require('@/assets/img/' + currentPicture.picture + '.jpg')" :alt=currentPicture.alt :width=currentPicture.width  :height=currentPicture.height>
                                 </picture>
-
-                            </div>
-                            <div class="paragraph block-text line-clamp">
-                                {{item.text}}
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="pictures-carousel__header">
-                    <div class="pictures-carousel__count"></div>
+                    <div class="pictures-carousel__count">{{currentPicture.count }} / {{currentPicture.countPicture }}</div>
                 </div>
 
                 <button  class="pictures-carousel__prev"  @click="prev()" :class="{fadeOut: isFadeOutL}">
@@ -66,6 +61,9 @@
         picture: props.pState.meetings.items[offset].picture,
         mobilPicture: props.pState.meetings.items[offset].slider_mobil.picture,
         count: props.pState.meetings.items[offset].id,
+        alt: props.pState.meetings.items[offset].alt,
+        height: props.pState.meetings.items[offset].height,
+        width: props.pState.meetings.items[offset].width,
         countPicture: countPicture,
     })
 
@@ -74,6 +72,9 @@
             picture: props.pState.meetings.items[offset].picture,
             mobilPicture: props.pState.meetings.items[offset].slider_mobil.picture,
             count: props.pState.meetings.items[offset].id,
+            alt: props.pState.meetings.items[offset].alt,
+            height: props.pState.meetings.items[offset].height,
+            width: props.pState.meetings.items[offset].width,
             countPicture: countPicture,
         }
     }
