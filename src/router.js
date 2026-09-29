@@ -37,11 +37,11 @@ const routes = [
   },
   {
     path: '/pictures-carousel',
-    component: PicturesCarousel
+    component: PicturesCarousel,
   },
   {
     path: '/meetings-carousel',
-    component: MeetingsCarousel
+    component: MeetingsCarousel,
   }
 ];
 
@@ -49,12 +49,7 @@ const router = createRouter({
   history: createMemoryHistory(),
   // history: createWebHashHistory(),
   // history: createWebHistory(),
-
   routes
 });
 
-
-
-
 export default router;
-

@@ -11,7 +11,10 @@
                                 <source type="image/webp" :srcset="require('@/assets/img/' + currentPicture.mobilPicture + '.webp')"  media="(max-width: 412px)">
                                 <source type="image/jpg" :srcset="require('@/assets/img/' + currentPicture.mobilPicture + '.jpg')" media="(max-width: 412px)">
                                 <source type="image/webp" :srcset="require('@/assets/img/' + currentPicture.picture + '.webp')">
-                                <img class="pictures-carousel__img" :class="{zoomIn: isActive}" :src="require('@/assets/img/' + currentPicture.picture + '.jpg')" :alt=currentPicture.alt :width=currentPicture.width  :height=currentPicture.height>
+                                <img class="pictures-carousel__img" 
+                                    :class="{opacity_null: isActive, zoomInLeft: isActiveLeft, zoomInRight: isActiveRight}" 
+                                    :src="require('@/assets/img/' + currentPicture.picture + '.jpg')" :alt=currentPicture.alt 
+                                    :width=currentPicture.width  :height=currentPicture.height>
                             </picture>
                         </div>
                     </div>
@@ -33,21 +36,16 @@
 
 <script setup>
     import { ref, onMounted } from 'vue';
-    import { useRoute } from 'vue-router';
-
     import '@/js/js.js'
-
+      
     const props = defineProps( {
         pState: Object
     });
-    let item = ref(props.pState.picture.items[0]);
-
-
     let offset = props.pState.picture.currentNumber - 1;
     const countPicture = (props.pState.picture.items).length;
-
-
-    const isActive =  ref(true);
+    const isActive =  ref(false);
+    const isActiveLeft =  ref(false);
+    const isActiveRight =  ref(true);
     const isFadeOutL =  ref(true);
     const isFadeOutR =  ref(false);
     isFadeOutL.value =  offset == 0 ? true : false;
@@ -84,9 +82,14 @@
         offset = --offset < 0 ? 0 : offset;
         selectPicture();
         isActive.value = true;
+        isActiveLeft.value  = false;
+        isActiveRight.value = false;  
+
         const timerId2 = setTimeout(() => {
             isActive.value = false;
-        }, 600)
+            isActiveLeft.value  = true;
+            isActiveRight.value = false;            
+        }, 200)
         
         isFadeOutL.value =  offset == 0 ? true : false;
         isFadeOutR.value =  offset == countPicture ? true : false;
@@ -98,12 +101,17 @@
 
     const next = () => {
         offset = ++offset >= countPicture ? (countPicture-1) : offset;
-        // debugger
+
         selectPicture();
         isActive.value = true;
+        isActiveLeft.value  = false;
+        isActiveRight.value = false; 
+        
         const timerId2 = setTimeout(() => {
             isActive.value = false;
-        }, 600)
+            isActiveLeft.value  = false;
+            isActiveRight.value = true;
+        }, 200)
         isFadeOutL.value =  offset == 0 ? true : false;
         isFadeOutR.value =  offset == (countPicture-1) ? true : false;
 
@@ -113,24 +121,34 @@
         }, 3000)
     }
 
-
     onMounted(() => {
         let shiftX = 0, direction = 0;
-        const page = document.querySelector('.pictures-carousel__slides');
-        page.addEventListener('touchstart', (event) => {
+        // const page = document.querySelector('.pictures-carousel__slides');
+        const page = document.querySelector('.pictures-carousel');
+        const slides = document.querySelector('.pictures-carousel__slides');
+
+        page.addEventListener("mouseover", function() {
+            isFadeOutL.value = offset == 0 ? true : false;
+            isFadeOutR.value = offset == (countPicture-1) ? true : false;
+        })
+        page.addEventListener("mouseout", function() {
+                isFadeOutL.value = true;
+                isFadeOutR.value = true;
+        });
+
+        slides.addEventListener('touchstart', (event) => {
             shiftX = event.touches[0].clientX;
         }, {
             passive: true
         });
-
-        page.addEventListener('touchmove', (e) => {
+        slides.addEventListener('touchmove', (e) => {
             direction = (e.touches[0].clientX >= shiftX) ? 1 : -1; //влево -1, вправо +1
-            page.style.transform = `translateX(${e.touches[0].clientX - shiftX}px)`;
+            slides.style.transform = `translateX(${e.touches[0].clientX - shiftX}px)`;
         }, {
             passive: true
         });
-        page.addEventListener('touchend' || 'touchcancel' , () => {
-            page.style.transform = `translateX(0)`;
+        slides.addEventListener('touchend' || 'touchcancel' , () => {
+            slides.style.transform = `translateX(0)`;
             if (direction < 0) {
                 next();
              } else {
@@ -139,9 +157,5 @@
         }, {
             passive: true
         });
-
     })
-
-
-
 </script>
